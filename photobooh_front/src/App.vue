@@ -1,75 +1,129 @@
 <template>
-  <div class="main">
-   <div class="header">
-     <h1>Image Gallery</h1>
-      </div>
-     <div v-if="images.length === 0">
-       <p>No images to display</p>
-     </div>
-     
-    <div v-else class="gallery">
-      <div v-for="image in images" :key="image.id" class="image-container">
-        <img :src="image.url" alt="Placeholder Image" />
-      </div>
-    </div>
-  </div>
+  <div class="App">
+
+  <HomeView/>
+  
+  
+
+  <header class="App-header">
+    <img src="./assets/image.png" alt="" class="logo">
+  </header>
+
+  <Button/>
+
+</div>  
+<Snow/>
 </template>
 
 <script>
+
+import HomeView from './components/HomeView.vue';
+import Snow from './components/Snow.vue';
+import Button from './components/Button.vue';
 export default {
-  data() {
-    return {
-      images: [], // Holds the image data
-    };
-  },
-  mounted() {
-    this.fetchImages();
-  },
-  methods: {
-    fetchImages() {
-      // Generate an array of placeholder image URLs using Lorem Picsum
-      const images = Array.from({ length: 10 }, (_, index) => ({
-        id: index + 1,
-        url: `https://picsum.photos/300/200?random=${index}`, // Ensure uniqueness with the query param
-      }));
-      this.images = images; // Assign the image array to the data property
-    },
-  },
-};
+  name: 'App',
+  components: {
+    Snow,
+    HomeView,
+    Button
+  }
+}
 </script>
 
-<style scoped>
-.gallery {
+<style >
+.App {
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  margin: auto;
-  width: 80vw;
-  flex-wrap: wrap;
-  justify-content:space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.header{
-  display:flex;
-  justify-content:center;
-  margin-top:2rem;
-  margin-bottom:5rem;
+.snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
 }
+    
+    .snow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(rgb(219, 216, 199), rgb(240, 227, 234));
+      background-position: 0% 0%;
+     
+    }
+     
+    .snowflake {
+      position: absolute;
+      
+      
+        
+      background-image: url('./assets/pngwing.com.png');
 
-h1{
-  margin-left:auto;
-  margin-right:auto;
-}
+      background-size: 100% 100%;
+      animation: fall  linear infinite;
+    
+    
+    }
+    
+    .App-header {
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50vh;
+  }
 
-.image-container img {
-  width: 25vw; 
-  height: auto;
-  border: 1px solid #ccc;
-  object-fit: cover;
-}
+  .logo {
+    width: 20vw;
+    height: auto;
+    margin-bottom: 20px;
+  }
 
-.image-container img:last-child {
-  display: block;
-  margin-top: 8px;
-}
+  @media (max-width: 768px) {
+    .App-header {
+      top: 30vh;
+    }
+    .logo {
+      width: 30vw;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .App-header {
+      top: 30vh;
+    }
+    .logo {
+      width: 60vw;
+      margin-bottom: 5px;
+    }
+  }
+
+
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) ;
+        opacity: 0 ;
+      }
+     
+      100% {
+        transform: translateY(-100vh) rotate(60deg) ;
+        opacity: 1;
+      }
+    }
+    
+
+   
+
 </style>
