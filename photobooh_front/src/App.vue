@@ -1,37 +1,21 @@
 <template>
   <div class="App">
-
-  <HomeView/>
-  
-  
-
-  <header class="App-header">
-    <img src="./assets/image.png" alt="" class="logo">
-  </header>
-
-  <Button/>
-
-</div>  
-<Snow/>
+  <Main/>
+  </div>
 </template>
 
 <script>
-
-import HomeView from './components/HomeView.vue';
-import Snow from './components/Snow.vue';
-import Button from './components/Button.vue';
+import Main from './components/Main.vue';
 export default {
   name: 'App',
   components: {
-    Snow,
-    HomeView,
-    Button
+    Main
   }
 }
 </script>
 
 <style >
-.App {
+.Main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +71,30 @@ export default {
     width: 20vw;
     height: auto;
     margin-bottom: 20px;
+    animation-name: beat;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
   }
+
+  @keyframes beat {
+    0% {
+      transform: scale(1);
+    }
+    8% {
+      transform: scale(1.1);
+    }
+    13% {
+      transform: scale(1);
+    }
+    18% {
+      transform: scale(1.1);
+    }
+    23% {
+      transform: scale(1);
+    }
+    
+    }
 
   @media (max-width: 768px) {
     .App-header {
@@ -122,6 +129,7 @@ export default {
         opacity: 1;
       }
     }
+
     
 
    
