@@ -71,7 +71,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: radial-gradient(rgb(255, 255, 255), rgb(255, 91, 126));
+      background-image: radial-gradient(rgb(255, 255, 255), rgb(245, 209, 217));
       background-position: 0% 0%;
      
     }
