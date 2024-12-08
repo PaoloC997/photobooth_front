@@ -19,6 +19,26 @@ export default {
 </script>
 
 <style >
+
+.boton {
+  position: absolute;
+  bottom: 35vh;
+  
+  color: black;
+  text-decoration: none;
+  font-size: 50px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1;
+
+
+}
+
+.boton:hover {
+  background-color: black;
+  color: rgb(255, 255, 255); 
+  transform: scale(1.1);
+}
 .About {
   position: absolute;
   top: 10px;
@@ -51,7 +71,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: radial-gradient(rgb(219, 216, 199), rgb(240, 227, 234));
+      background-image: radial-gradient(rgb(255, 255, 255), rgb(255, 91, 126));
       background-position: 0% 0%;
      
     }

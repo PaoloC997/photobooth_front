@@ -4,7 +4,7 @@
       <header class="App-header">
       <img src="../assets/image.png" alt="" class="logo">
       </header>
-      
+      <a class="boton" href="/Gallery">Todas Las Fotos</a>
       <HomeView class="section2"/>
     </div>  
     <Snow/>

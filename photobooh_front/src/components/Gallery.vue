@@ -9,6 +9,9 @@
 import Snow from './Snow.vue';
 export default {
   name: 'Gallery',
+  components: {
+    Snow,
+  }
   
 }
 
