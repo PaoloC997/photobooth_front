@@ -1,6 +1,10 @@
 <template>
-  <div class="App">
-  <Main/>
+  <div>
+    <nav>
+      <router-link to="/"></router-link>
+      <router-link to="/about"></router-link>
+    </nav>
+    <router-view />
   </div>
 </template>
 
@@ -15,11 +19,20 @@ export default {
 </script>
 
 <style >
+.About {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
 .Main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  
+  
 }
 
 .snow-container {
@@ -55,28 +68,48 @@ export default {
     
     
     }
+    @keyframes fall {
+      0% {
+        transform: translateY(0) ;
+        opacity: 0 ;
+      }
+     
+      100% {
+        transform: translateY(-100vh) rotate(60deg) ;
+        opacity: 1;
+      }
+    }
     
-    .App-header {
-    height: 50vh;
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50vh;
+
+
+  .section1 {
+  position: absolute;
+    height: 20vh;
+    width: 20vw;
+  right: -30%;
+    
   }
+  
+
 
   .logo {
-    width: 20vw;
+    width: 18vw;
     height: auto;
-    margin-bottom: 20px;
+    
     animation-name: beat;
     animation-duration: 1.5s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+    
   }
-
+  .section2 {
+  position: absolute;
+  
+    height: 20vh;
+    width: 20vw;
+    
+    right: 30%;
+  }
   @keyframes beat {
     0% {
       transform: scale(1);
@@ -104,6 +137,8 @@ export default {
       width: 30vw;
       margin-bottom: 10px;
     }
+
+    
   }
 
   @media (max-width: 480px) {
@@ -118,17 +153,7 @@ export default {
 
 
 
-    @keyframes fall {
-      0% {
-        transform: translateY(0) ;
-        opacity: 0 ;
-      }
-     
-      100% {
-        transform: translateY(-100vh) rotate(60deg) ;
-        opacity: 1;
-      }
-    }
+  
 
     
 
