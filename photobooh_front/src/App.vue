@@ -1,58 +1,15 @@
 <template>
   <div>
-    <nav>
-      <router-link to="/"></router-link>
-      <router-link to="/about"></router-link>
-    </nav>
     <router-view />
   </div>
 </template>
 
-<script>
-import Main from './components/Main.vue';
-export default {
-  name: 'App',
-  components: {
-    Main
-  }
-}
-</script>
+
 
 <style >
-
-.boton {
-  position: absolute;
-  bottom: 35vh;
-  
-  color: black;
-  text-decoration: none;
-  font-size: 50px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  z-index: 1;
-
-
-}
-
-.boton:hover {
-  background-color: black;
-  color: rgb(255, 255, 255); 
-  transform: scale(1.1);
-}
-.About {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-}
-.Main {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  
-  
+body {
+  width: 100%;
+  height: 100%;
 }
 
 .snow-container {
@@ -100,15 +57,6 @@ export default {
       }
     }
     
-
-
-  .section1 {
-  position: absolute;
-    height: 20vh;
-    width: 20vw;
-  right: -30%;
-    
-  }
   
 
 
@@ -122,14 +70,7 @@ export default {
     animation-iteration-count: infinite;
     
   }
-  .section2 {
-  position: absolute;
   
-    height: 20vh;
-    width: 20vw;
-    
-    right: 30%;
-  }
   @keyframes beat {
     0% {
       transform: scale(1);
@@ -149,34 +90,31 @@ export default {
     
     }
 
-  @media (max-width: 768px) {
-    .App-header {
-      top: 30vh;
-    }
-    .logo {
-      width: 30vw;
-      margin-bottom: 10px;
-    }
-
-    
-  }
-
-  @media (max-width: 480px) {
-    .App-header {
-      top: 30vh;
-    }
-    .logo {
-      width: 60vw;
-      margin-bottom: 5px;
-    }
-  }
-
-
-
   
 
-    
 
-   
+/* Media query para móviles en posición de pie */
+@media (max-width: 480px) {
+  .boton {
+    font-size: 20px;
+    padding: 5px 10px;
+  }
+
+
+  .section1 {
+    margin-top: 20vh;
+    height: 3vh;
+  }
+
+  .section2 {
+    display: none;
+  }
+  .logo {
+    width: 50vw;
+    height: auto;
+    top: 20vh;
+    position: relative;
+  }
+}
 
 </style>

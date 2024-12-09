@@ -97,6 +97,15 @@
 .grid-item:hover {
   transform: translateY(-10px);
 }
+
+h1 {
+  text-align: center;
+  font-family: 'Yuji Mai', cursive;
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr 1fr 1fr;
@@ -117,14 +126,12 @@
     transform: rotate(2deg);
     margin-top: 2px;
   }
+
+  h1 {
+    font-size: 30px;
+  }
 }
 
-h1 {
-  text-align: center;
-  font-family: 'Yuji Mai', cursive;
-  font-size: 50px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+
 
 </style>

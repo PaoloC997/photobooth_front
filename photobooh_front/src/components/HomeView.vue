@@ -2,7 +2,7 @@
   <div class="pictures">
     <Swiper
       :effect="'Autoplay'"
-      :direction="'vertical'"
+      
       :grabCursor="true"
       :autoplay="{
         delay: 2500,
@@ -62,11 +62,11 @@ export default {
 
   .swiper {
     
-  top: 10vh;
+    
     width: 25vw;
     height: 25vh;
     overflow: visible;
-    left: -200%;
+    
 
 
   }
