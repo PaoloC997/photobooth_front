@@ -28,6 +28,12 @@ export default {
 
 </script>
 
-<style>
+
+
+<style scoped>
+.boton {
+    font-family: 'Yuji Mai', cursive;
+}
+
 
 </style>

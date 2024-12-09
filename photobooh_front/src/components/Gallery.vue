@@ -40,6 +40,7 @@
   </script>
   
   <style scoped>
+
 .gallery {
   display: flex;
   flex-direction: column;
@@ -116,6 +117,14 @@
     transform: rotate(2deg);
     margin-top: 2px;
   }
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Yuji Mai', cursive;
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 </style>

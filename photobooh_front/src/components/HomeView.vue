@@ -59,9 +59,6 @@ export default {
   
   <style>
 
-  h1 {
-    text-align: center;
-  }
 
   .swiper {
     
