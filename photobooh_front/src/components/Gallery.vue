@@ -104,7 +104,10 @@ h1 {
   font-size: 50px;
   margin-top: 20px;
   margin-bottom: 20px;
-}
+  color: rgb(250, 58, 116);
+  
+  border-radius: 20px;
+  }
 
 @media (max-width: 480px) {
   .grid {

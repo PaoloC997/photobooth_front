@@ -6,10 +6,10 @@
       
         <header class="App-header">
       <img src="../assets/image.png" alt="" class="logo">
-      <a class="boton" href="/Gallery">Todas Las Fotos</a>
+      <a class="boton" href="/Gallery">Accede a Las Cuchi Fotos</a>
       </header>
       
-    <div class="section2">
+    <div  class="section2">
       <HomeView/>
     </div>
     </div>  
@@ -55,7 +55,7 @@ export default {
     font-family: 'Yuji Mai', cursive;
   position: absolute;
   bottom: 35vh;
-  color: black;
+  color: rgb(250, 58, 116);
   text-decoration: none;
   font-size: 50px;
   padding: 10px 20px;
@@ -66,8 +66,9 @@ export default {
 }
 
 .boton:hover {
-  background-color: black;
-  color: rgb(255, 255, 255); 
+  background-color: rgb(240, 36, 121);
+  color: rgb(255, 230, 230); 
+  border-radius: 10px;
   transform: scale(1.1);
 }
 
@@ -78,7 +79,7 @@ export default {
   justify-content: center;
   align-items: center;
   position: relative;
-  
+  animation: section1 40s infinite linear;
 }
 
 .section2 {
@@ -88,7 +89,33 @@ export default {
   justify-content: center;
   align-items: center;
   position: relative;
+  animation: section2 40s infinite linear;
   
+}
+
+@keyframes section1 {
+  0% {
+    transform: translateX(-300%);
+  }
+  50% {
+    transform: translateX(-70%);
+  }
+  
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+@keyframes section2 {
+  0% {
+    transform: translate(-100%);
+  }
+  50% {
+    transform: translate(-330%);
+  }
+  100% {
+    transform: translate(-100%);    
+  }
 }
 
 
@@ -103,7 +130,24 @@ export default {
   .section1 {
     top: 15vh;
     height: 10vh;
+    animation: section1 40s infinite linear;
+
   }
+ @keyframes section1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-1200%);
+  }
+  
+  100% {
+    transform: translateX(-100%);
+  }
+  }
+    
+ 
+
 .section2 {
     display: none;
   

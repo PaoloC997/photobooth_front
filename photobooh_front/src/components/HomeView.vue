@@ -1,16 +1,9 @@
 <template>
   <div class="pictures">
     <Swiper
-      :effect="'Autoplay'"
-      
-      :grabCursor="true"
-      :autoplay="{
-        delay: 2500,
-        disableOnInteraction: false,
-      }"
       :loop="true"
       :slidesPerView="1"
-      :spaceBetween="0"
+      :spaceBetween="10"
       :modules="modules"
       class="mySwiper"
     >
@@ -26,6 +19,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css/autoplay';
 import 'swiper/css';
+import { loadRouteLocation } from 'vue-router';
 
 export default {
   components: {
@@ -47,7 +41,7 @@ export default {
   },
   methods: {
     fetchImages() {
-      const images = Array.from({ length: 20 }, (_, index) => ({
+      const images = Array.from({ length: 50 }, (_, index) => ({
         id: index + 1,
         url: `https://picsum.photos/300/200?random=${index}`,
       }));
@@ -84,47 +78,14 @@ export default {
     
     
   }
-  @media (max-width: 480px) {
+  
+
+@media (max-width: 480px) {
     .swiper {
-      width: 80vw;
+      width: 100vw;
       height: 50vh;
+      overflow: visible;
+      left: 5vw;
     }
   }
-
-  .film-frame {
-  width: 300px;
-  height: 200px;
-  background-color: #000; /* Fondo del contenedor */
-  border: 10px solid #222; /* Marco del contenedor */
-  border-radius: 5px;
-  position: relative;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
-}
-
-.film-frame:before,
-.film-frame:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 15px; /* Altura del área con perforaciones */
-  background: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 10px,
-    #fff 10px,
-    #fff 12px,
-    transparent 12px
-  );
-  z-index: 1;
-}
-
-.film-frame:before {
-  top: -15px; /* Se coloca fuera del marco */
-}
-
-.film-frame:after {
-  bottom: -15px; /* Se coloca fuera del marco */
-}
   </style>

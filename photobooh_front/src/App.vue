@@ -93,7 +93,7 @@ body {
   
 
 
-/* Media query para móviles en posición de pie */
+
 @media (max-width: 480px) {
   .boton {
     font-size: 20px;
