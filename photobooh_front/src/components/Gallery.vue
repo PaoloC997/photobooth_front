@@ -4,39 +4,50 @@
       <h1>Cuchi Fotos de la Cuchi Boda</h1>
       <div class="grid">
         <div v-for="image in images" :key="image.id" class="grid-item">
-          <img :src="image.url" :alt="image.description" />
+          <img :src="image.url" :alt="image.description" @click="handleClick(image)" />
         </div>
     </div>
+    
+    <div v-if="expandedImage" class="expanded-image" >
+      <img :src="expandedImage.url" :alt="expandedImage.description" @click="expandedImage = null" />
     </div>
+</div>
   </template>
   
   <script>
-  import Snow from './Snow.vue';
+  import { transform } from 'typescript';
+import Snow from './Snow.vue';
+import { h } from 'vue';
   
-  export default {
-    name: 'Gallery',
-    components: {
-      Snow,
+export default {
+  name: 'Gallery',
+  components: {
+    Snow,
+  },
+  data() {
+    return {
+      images: [],
+      expandedImage: null,
+    };
+  },
+  mounted() {
+    this.fetchImages();
+  },
+  methods: {
+    fetchImages() {
+      const images = Array.from({ length: 50 }, (_, index) => ({
+        id: index + 1,
+        url: `https://picsum.photos/300/200?random=${index}`,
+        description: `Foto ${index + 1}`,
+      }));
+      this.images = images;
     },
-    data() {
-      return {
-        images: [],
-      };
+    handleClick(image) {
+      this.expandedImage = image;
+      console.log("hola putos");
     },
-    mounted() {
-      this.fetchImages();
-    },
-    methods: {
-      fetchImages() {
-        const images = Array.from({ length: 50 }, (_, index) => ({
-          id: index + 1,
-          url: `https://picsum.photos/300/200?random=${index}`,
-          description: `Foto ${index + 1}`,
-        }));
-        this.images = images;
-      },
-    },
-  };
+  },
+};
   </script>
   
   <style scoped>
@@ -52,9 +63,9 @@
   margin: 0 auto;
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
   grid-template-rows: auto;
-  grid-gap: 20px;
+  grid-gap: 70px;
   justify-items: center; 
 }
 
@@ -64,6 +75,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -82,20 +94,23 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px; 
+  
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 
 .grid-item:hover img {
+    
   transform: scale(1.05); 
   filter: brightness(1.1); 
+  
 }
 
 
 .grid-item:hover {
   transform: translateY(-10px);
+  
 }
 
 h1 {
@@ -108,6 +123,28 @@ h1 {
   
   border-radius: 20px;
   }
+
+  .expanded-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.432);
+  cursor: pointer;
+}
+
+.expanded-image img {
+  max-width: 80%;
+  max-height: 80%;
+}
 
 @media (max-width: 480px) {
   .grid {
