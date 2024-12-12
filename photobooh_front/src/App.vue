@@ -7,9 +7,18 @@
 
 
 <style >
+#app {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
 body {
   width: 100%;
   height: 100%;
+}
+
+.pictures {
+  width: 100%;
 }
 
 .snow-container {
@@ -63,7 +72,8 @@ body {
   .logo {
     width: 18vw;
     height: auto;
-    
+    position: relative;
+    bottom: -20vh;
     animation-name: beat;
     animation-duration: 1.5s;
     animation-timing-function: ease-in-out;

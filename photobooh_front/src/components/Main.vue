@@ -1,4 +1,5 @@
 <template>
+  
     <div class="Main">
         <div class="section1">
             <HomeView/>
@@ -9,9 +10,7 @@
       <a class="boton" href="/Gallery">Accede a Las Cuchi Fotos</a>
       </header>
       
-    <div  class="section2">
-      <HomeView/>
-    </div>
+    
     </div>  
     <Snow/>
 </template>
@@ -38,6 +37,7 @@ export default {
 
 <style scoped>
 
+
 .Main {
   display: flex;
   flex-direction: column;
@@ -49,12 +49,15 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     }
+
+
 
 .boton {
     font-family: 'Yuji Mai', cursive;
   position: absolute;
-  bottom: 35vh;
+  bottom: 10vh;
   color: rgb(250, 58, 116);
   text-decoration: none;
   font-size: 50px;
@@ -79,44 +82,11 @@ export default {
   justify-content: center;
   align-items: center;
   position: relative;
-  animation: section1 40s infinite linear;
-}
-
-.section2 {
-    top: 10vh;
-  height: 20vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  animation: section2 40s infinite linear;
   
 }
 
-@keyframes section1 {
-  0% {
-    transform: translateX(-300%);
-  }
-  50% {
-    transform: translateX(-70%);
-  }
-  
-  100% {
-    transform: translateX(-300%);
-  }
-}
 
-@keyframes section2 {
-  0% {
-    transform: translate(-100%);
-  }
-  50% {
-    transform: translate(-330%);
-  }
-  100% {
-    transform: translate(-100%);    
-  }
-}
+
 
 
 
@@ -148,10 +118,6 @@ export default {
     
  
 
-.section2 {
-    display: none;
-  
-}
 
 }
 

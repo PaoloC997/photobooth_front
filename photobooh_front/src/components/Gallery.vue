@@ -44,7 +44,7 @@ export default {
     },
     handleClick(image) {
       this.expandedImage = image;
-      console.log("hola putos");
+      
     },
   },
 };
@@ -94,7 +94,7 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
+  border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
@@ -109,9 +109,13 @@ export default {
 
 
 .grid-item:hover {
-  transform: translateY(-10px);
-  
+  transform: translateY(-10px) scale(1.3);
+  z-index: 1;
+  border:3px solid rgba(230, 141, 168, 0.418);
+  border-radius: 3px;
 }
+
+
 
 h1 {
   text-align: center;
@@ -119,7 +123,7 @@ h1 {
   font-size: 50px;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: rgb(250, 58, 116);
+  color: rgb(221, 0, 66);
   
   border-radius: 20px;
   }
